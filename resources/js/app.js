@@ -8,6 +8,28 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+import DetalleProducto from './components/Frontend/DetalleProductoComponent.vue'
+import Home from './components/Frontend/HomeComponent.vue'
+import Nosotros from './components/Frontend/NosotrosComponent.vue'
+import Contacto from './components/Frontend/ContactoComponent.vue'
+import App from './components/App.vue'
+
+const routes = [
+    { path: '/detalle-producto/:id', component: DetalleProducto},
+    { path: '/inicio',name: 'inicio', component: Home},
+    { path: '/nosotros',name: 'nosotros', component: Nosotros},
+    { path: '/contacto',name: 'contacto', component: Contacto},
+  ];  
+  export default routes;
+  const router = new VueRouter({
+    mode: 'history',
+    base: '/ElectronicaFront/electronicav2/public', 
+    routes,
+  });
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,8 +41,12 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('contacto-component', require('./components/Frontend/ContactoComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('contacto-component', require('./components/Frontend/ContactoComponent.vue').default);
+// Vue.component('login-component', require('./components/Auth/LoginComponent.vue').default);
+// Vue.component('home-component', require('./components/Frontend/HomeComponent.vue').default);
+// Vue.component('nosotros-component', require('./components/Frontend/NosotrosComponent.vue').default);
+// Vue.component('detalle-producto-component', require('./components/Frontend/DetalleProductoComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,4 +56,6 @@ Vue.component('contacto-component', require('./components/Frontend/ContactoCompo
 
 const app = new Vue({
     el: '#app',
+    components: {App},
+    router
 });

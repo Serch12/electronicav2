@@ -6,81 +6,38 @@
                 <div class="row footer-theme partition-f">
                     <div class="col-lg-4 col-md-6 sub-title">
                         <div class="footer-title footer-mobile-title">
-                            <h4>about</h4>
+                            <h4>Datos de contacto</h4>
                         </div>
                         <div class="footer-contant">
-                            <div class="footer-logo"><img src="assets/images/icon/logo/f10.png" alt=""></div>
+                            <!-- <div class="footer-logo"><img src="assets/images/icon/logo/f10.png" alt=""></div> -->
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore</p>
                             <ul class="contact-list">
                                 <li><i class="fa fa-map-marker"></i>Multikart Demo Store, Demo store India 345-659
                                 </li>
-                                <li><i class="fa fa-phone"></i>Call Us: 123-456-7898</li>
-                                <li><i class="fa fa-envelope"></i>Email Us: <a href="#">Support@Multikart.com</a></li>
+                                <li><i class="fa fa-phone"></i>Teléfono de contacto: 123-456-7898</li>
+                                <li><i class="fa fa-envelope"></i>Correo de contacto: <a href="#">contacto@electricavazquez.com</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6">
                         <div class="sub-title">
                             <div class="footer-title">
-                                <h4>my account</h4>
+                                <h4>Menú</h4>
                             </div>
                             <div class="footer-contant">
                                 <ul>
-                                    <li><a href="#">mens</a></li>
-                                    <li><a href="#">womens</a></li>
-                                    <li><a href="#">clothing</a></li>
-                                    <li><a href="#">accessories</a></li>
-                                    <li><a href="#">featured</a></li>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="#">Catálogo</a></li>
+                                    <li><a href="#">Ofertas</a></li>
+                                    <li><a href="#">Distribuidores</a></li>
+                                    <li><a href="#">Contacto</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-6">
-                        <div class="sub-title">
-                            <div class="footer-title">
-                                <h4>information</h4>
-                            </div>
-                            <div class="footer-contant">
-                                <ul>
-                                    <li><a href="#">shipping & return</a></li>
-                                    <li><a href="#">secure shopping</a></li>
-                                    <li><a href="#">gallary</a></li>
-                                    <li><a href="#">affiliates</a></li>
-                                    <li><a href="#">contacts</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="sub-title">
-                            <div class="footer-title">
-                                <h4>follow us</h4>
-                            </div>
-                            <div class="footer-contant">
-                                <p class="mb-cls-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt
-                                    ut labore</p>
-                                <form class="form-inline">
-                                    <div class="form-group me-sm-3 mb-2">
-                                        <label for="inputPassword2" class="sr-only">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword2"
-                                            placeholder="Enter Your Email">
-                                    </div>
-                                    <button type="submit" class="btn btn-solid mb-2">subscribe</button>
-                                </form>
-                                <div class="footer-social">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
