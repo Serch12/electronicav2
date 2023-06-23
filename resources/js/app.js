@@ -19,12 +19,13 @@ import Contacto from './components/Frontend/ContactoComponent.vue'
 import App from './components/App.vue'
 
 const routes = [
-    { path: '/detalle-producto/:id', component: DetalleProducto},
+    { path: '/detalle-producto/:id',name: 'detalle-producto', component: DetalleProducto},
     { path: '/inicio',name: 'inicio', component: Home},
+    { path: '/',name: 'home', component: Home},
     { path: '/nosotros',name: 'nosotros', component: Nosotros},
     { path: '/contacto',name: 'contacto', component: Contacto},
   ];  
-  export default routes;
+  // export default routes;
   const router = new VueRouter({
     mode: 'history',
     base: '/ElectronicaFront/electronicav2/public', 
@@ -54,8 +55,11 @@ const routes = [
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 const app = new Vue({
     el: '#app',
-    components: {App},
-    router
+    // components: {App},
+    router,
+    render: h => h(App)
 });

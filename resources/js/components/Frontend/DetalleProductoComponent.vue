@@ -7,21 +7,13 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-slick">
-                            <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/yoga/pro/1.jpg" alt="" style="width: 676px;height: 918px;"
-                                    class="img-fluid blur-up lazyload image_zoom_cls-0"></div>
-                            <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/yoga/pro/1.jpg" alt="" style="width: 676px;height: 918px;"
-                                    class="img-fluid blur-up lazyload image_zoom_cls-1"></div>
-                            <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/yoga/pro/1.jpg" alt="" style="width: 676px;height: 918px;"
-                                    class="img-fluid blur-up lazyload image_zoom_cls-2"></div>
+                            <div v-for="(i,index) in imagenes" :key="index"><img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${i.nombre}`" alt="" style="width: 676px;height: 918px;"
+                                    :class="`img-fluid blur-up lazyload image_zoom_cls-${index}`"></div>
                         </div>
                         <div class="row">
                             <div class="col-12 p-0">
                                 <div class="slider-nav">
-                                    <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/1.jpg" alt=""
-                                            class="img-fluid blur-up lazyload"></div>
-                                    <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/2.jpg" alt=""
-                                            class="img-fluid blur-up lazyload"></div>
-                                    <div><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/27.jpg" alt=""
+                                    <div v-for="(i,index) in imagenes" :key="index"><img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${i.nombre}`" alt=""
                                             class="img-fluid blur-up lazyload"></div>
                                 </div>
                             </div>
@@ -43,7 +35,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <h2>Women Pink Shirt</h2>
+                            <h2>{{ producto.producto }}</h2>
                             <div class="rating-section">
                                 <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                         class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
@@ -520,10 +512,7 @@
 <script>
     export default {
         mounted(){
-            axios.get(`detalle/${this.$route.params.id}`).then(res =>{
-                    this.producto = res.data.producto;
-                    this.imagenes = res.data.imagenes;
-                });
+            this.inicio();
         },
         data(){
             return {
@@ -531,13 +520,15 @@
                 imagenes: [],
             }
         },
+        created() {
+        },
         methods:{
-            // inicio(){
-            //     axios.get(`detalle/${this.$route.params.id_producto}`).then(res =>{
-            //         this.producto = res.data.producto;
-            //         this.imagenes = res.data.imagenes;
-            //     });  
-            // },
+            inicio(){
+                axios.get(`detalle/${this.$route.params.id}`).then(res =>{
+                this.producto = res.data.producto[0];
+                    this.imagenes = res.data.imagenes;
+                });  
+            },
         }
     }
 </script>

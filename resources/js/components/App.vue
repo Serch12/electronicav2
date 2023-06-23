@@ -155,7 +155,7 @@
                                     <router-link exact :to="{ name: 'nosotros' }">Nosotros</router-link>
                                 </li>
                                 <li>
-                                    <a href="#">catalogo de productos</a>
+                                    <a href="#">catalogo de productos</a> 
                                     <ul>
                                         <li><a href="category-page(vegetables).html">tab style<span
                                                     class="new-tag">new</span></a></li>
@@ -197,3 +197,14 @@
     <router-view></router-view>
    </div>
 </template>
+<script>
+    export default {
+        beforeDestroy: function () {
+            this.choicesSelect.destroy()
+        }
+    }
+</script>
+
+<style lang="stylus" scoped>
+
+</style>
