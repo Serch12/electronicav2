@@ -50,5 +50,13 @@ class FrontController extends Controller
         $imagenes = DB::connection('mysql2')->table('tbl_imagenes_producto')->where('id_producto', $id)->get();
         return response()->json(['producto' => $producto, 'imagenes' => $imagenes]);
     } 
+
+    /**
+     * funcion que retorna las cateogorias
+     */
+    public function listaCategorias(){
+        $categorias = DB::connection('mysql2')->table('tbl_categoria')->get();
+        return $categorias;
+    }
    
 }

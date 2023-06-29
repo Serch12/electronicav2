@@ -16,14 +16,16 @@ import DetalleProducto from './components/Frontend/DetalleProductoComponent.vue'
 import Home from './components/Frontend/HomeComponent.vue'
 import Nosotros from './components/Frontend/NosotrosComponent.vue'
 import Contacto from './components/Frontend/ContactoComponent.vue'
+import Cotizacion from './components/Frontend/CotizacionComponent.vue'
 import App from './components/App.vue'
 
 const routes = [
-    { path: '/detalle-producto/:id',name: 'detalle-producto', component: DetalleProducto},
+    { path: '/detalle-producto/:id', component: DetalleProducto},
     { path: '/inicio',name: 'inicio', component: Home},
     { path: '/',name: 'home', component: Home},
     { path: '/nosotros',name: 'nosotros', component: Nosotros},
     { path: '/contacto',name: 'contacto', component: Contacto},
+    { path: '/cotizacion',name: 'cotizacion', component: Cotizacion},
   ];  
   // export default routes;
   const router = new VueRouter({

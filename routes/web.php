@@ -59,7 +59,7 @@ Route::get('/detalle-producto/detalle/{id}', function ($id) {
         'imagenes' => $imagenes
     ]);
 });
-
+Route::get('/categorias', [FrontController::class, 'listaCategorias'])->name('categorias');
 
 Auth::routes();
 

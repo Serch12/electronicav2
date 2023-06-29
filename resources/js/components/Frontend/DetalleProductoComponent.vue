@@ -6,16 +6,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="product-slick">
-                            <div v-for="(i,index) in imagenes" :key="index"><img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${i.nombre}`" alt="" style="width: 676px;height: 918px;"
-                                    :class="`img-fluid blur-up lazyload image_zoom_cls-${index}`"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 p-0">
-                                <div class="slider-nav">
-                                    <div v-for="(i,index) in imagenes" :key="index"><img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${i.nombre}`" alt=""
-                                            class="img-fluid blur-up lazyload"></div>
+                        <div class = "product-imgs">
+                            <div class = "img-display">
+                                <div class = "img-showcase">
+                                <img v-for="(ing, index) in imagenes" :key="index" :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${currentImage}`" alt = "shoe image" style="height: 676px;">
+                                
                                 </div>
+                            </div>
+                            <div class = "img-select">
+                                <div class = "img-item" v-for="(im, i) in imagenes" :key="i">
+                                <a href="#." :data-id="`${i + 1}`" @click="cambiaimagen()">
+                                    <img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${im.nombre}`" alt ="shoe image" style="width: 150px;height: 150px;">
+                                </a>
+                                </div>
+                    
                             </div>
                         </div>
                     </div>
@@ -26,34 +30,35 @@
                                     <li>
                                         <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/fire.gif" class="img-fluid" alt="image">
                                         <span class="p-counter">37</span>
-                                        <span class="lang">orders in last 24 hours</span>
+                                        <span class="lang">cotizaciones en las ultimas 24 horas.</span>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/person.gif" class="img-fluid user_img" alt="image">
                                         <span class="p-counter">44</span>
                                         <span class="lang">active view this</span>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <h2>{{ producto.producto }}</h2>
-                            <div class="rating-section">
+                            <!-- <div class="rating-section">
                                 <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                         class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                 </div>
                                 <h6>120 ratings</h6>
-                            </div>
-                            <div class="label-section">
+                            </div> -->
+                            <!-- <div class="label-section">
                                 <span class="badge badge-grey-color">#1 Best seller</span>
                                 <span class="label-text">in fashion</span>
-                            </div>
-                            <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3>
-                            <ul class="color-variant">
+                            </div> -->
+                            <!-- <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3> -->
+                            <h3 class="price-detail">$32.96</h3>
+                            <!-- <ul class="color-variant">
                                 <li class="bg-light0 active"></li>
                                 <li class="bg-light1"></li>
                                 <li class="bg-light2"></li>
-                            </ul>
+                            </ul> -->
                             <div id="selectSize" class="addeffect-section product-description border-product">
-                                <h6 class="product-title size-text">select size <span><a href="" data-bs-toggle="modal"
+                                <!-- <h6 class="product-title size-text">select size <span><a href="" data-bs-toggle="modal"
                                             data-bs-target="#sizemodal">size
                                             chart</a></span></h6>
                                 <div class="modal fade" id="sizemodal" tabindex="-1" role="dialog"
@@ -70,8 +75,8 @@
                                                     class="img-fluid blur-up lazyload"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <h6 class="error-message">please select size</h6>
+                                </div> -->
+                                <h6 class="error-message">Seleccionar tamaño</h6>
                                 <div class="size-box">
                                     <ul>
                                         <li><a href="javascript:void(0)">s</a></li>
@@ -80,7 +85,7 @@
                                         <li><a href="javascript:void(0)">xl</a></li>
                                     </ul>
                                 </div>
-                                <h6 class="product-title">quantity</h6>
+                                <h6 class="product-title">Cantidad</h6>
                                 <div class="qty-box">
                                     <div class="input-group"><span class="input-group-prepend"><button type="button"
                                                 class="btn quantity-left-minus" data-type="minus" data-field=""><i
@@ -92,34 +97,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-buttons"><a href="javascript:void(0)" id="cartEffect"
+                            <div class="product-buttons"><router-link exact :to="{ name: 'cotizacion' }"><a href="javascript:void(0)" id="cartEffect"
                                     class="btn btn-solid hover-solid btn-animation"><i class="fa fa-shopping-cart me-1"
-                                        aria-hidden="true"></i> add to cart</a> <a href="#" class="btn btn-solid"><i
-                                        class="fa fa-bookmark fz-16 me-2" aria-hidden="true"></i>wishlist</a></div>
-                            <div class="product-count">
+                                        aria-hidden="true"></i> agregar a cotización</a></router-link></div>
+                            <!-- <div class="product-count">
                                 <ul>
                                     <li>
                                         <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/icon/truck.png" class="img-fluid" alt="image">
                                         <span class="lang">Free shipping for orders above $500 USD</span>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
+                           
                             <div class="border-product">
-                                <h6 class="product-title">Sales Ends In</h6>
-                                <div class="timer">
-                                    <p id="demo"></p>
-                                </div>
-                            </div>
-                            <div class="border-product">
-                                <h6 class="product-title">shipping info</h6>
+                                <h6 class="product-title">Descripción</h6>
                                 <ul class="shipping-info">
-                                    <li>100% Original Products</li>
-                                    <li>Free Delivery on order above Rs. 799</li>
-                                    <li>Pay on delivery is available</li>
-                                    <li>Easy 30 days returns and exchanges</li>
+                                    <li>{{ producto.descripcion }}</li>
                                 </ul>
                             </div>
-                            <div class="border-product">
+                            <!-- <div class="border-product">
                                 <h6 class="product-title">share it</h6>
                                 <div class="product-icon">
                                     <ul class="product-social">
@@ -134,7 +130,7 @@
                             <div class="border-product">
                                 <h6 class="product-title">100% secure payment</h6>
                                 <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/payment.png" class="img-fluid mt-1" alt="">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -155,11 +151,7 @@
                                     class="icofont icofont-ui-home"></i>Detalles</a>
                             <div class="material-border"></div>
                         </li>
-                        <li class="nav-item"><a class="nav-link" id="profile-top-tab" data-bs-toggle="tab"
-                                href="#top-profile" role="tab" aria-selected="false"><i
-                                    class="icofont icofont-man-in-glasses"></i>Especificaciones</a>
-                            <div class="material-border"></div>
-                        </li>
+                       
                         <li class="nav-item"><a class="nav-link" id="review-top-tab" data-bs-toggle="tab"
                                 href="#top-review" role="tab" aria-selected="false"><i
                                     class="icofont icofont-contacts"></i>Comentarios</a>
@@ -171,62 +163,10 @@
                             aria-labelledby="top-home-tab">
                             <div class="product-tab-discription">
                                 <div class="part">
-                                    <p>The Model is wearing a white blouse from our stylist's collection, see the image
-                                        for a mock-up of what the actual blouse would look like.it has text written on
-                                        it in a black cursive language which looks great on a white color.</p>
+                                    <a href="" :href="`http://localhost/Electrica/public/ArchivosSistema/PDF/${producto.archivo}`" target="_blank" onclick="window.open(this.href, this.target, 'width=650,height=650'); return false;"><p>Descargar PDF</p></a>
+                                    
                                 </div>
-                                <div class="part">
-                                    <h5 class="inner-title">fabric:</h5>
-                                    <p>Art silk is manufactured by synthetic fibres like rayon. It's light in weight and
-                                        is soft on the skin for comfort in summers.Art silk is manufactured by synthetic
-                                        fibres like rayon. It's light in weight and is soft on the skin for comfort in
-                                        summers.</p>
-                                </div>
-                                <div class="part">
-                                    <h5 class="inner-title">size & fit:</h5>
-                                    <p>The model (height 5'8") is wearing a size S</p>
-                                </div>
-                                <div class="part">
-                                    <h5 class="inner-title">Material & Care:</h5>
-                                    <p>Top fabric: pure cotton</p>
-                                    <p>Bottom fabric: pure cotton</p>
-                                    <p>Hand-wash</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
-                            <p>The Model is wearing a white blouse from our stylist's collection, see the image for a
-                                mock-up of what the actual blouse would look like.it has text written on it in a black
-                                cursive language which looks great on a white color.</p>
-                            <div class="single-product-tables">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>Sleeve Length</td>
-                                            <td>Sleevless</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Neck</td>
-                                            <td>Round Neck</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Occasion</td>
-                                            <td>Sports</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>Fabric</td>
-                                            <td>Polyester</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fit</td>
-                                            <td>Regular Fit</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <img src="assets/images/logos/logoelectro.png" alt="" style="width: 150px;height: 150px;">
                             </div>
                         </div>
                         <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
@@ -243,27 +183,26 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter Your name"
+                                        <label for="name">Nombre</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre"
                                             required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                        <label for="email">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Ingresa tu correo" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="review">Review Title</label>
+                                        <label for="review">Asunto</label>
                                         <input type="text" class="form-control" id="review"
-                                            placeholder="Enter your Review Subjects" required>
+                                            placeholder="Ingresa tu asunto" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="review">Review Title</label>
-                                        <textarea class="form-control" placeholder="Wrire Your Testimonial Here"
+                                        <label for="review">Mensaje</label>
+                                        <textarea class="form-control" placeholder="Ingresa tu mensaje"
                                             id="exampleFormControlTextarea1" rows="6"></textarea>
                                     </div>
                                     <div class="col-md-12">
-                                        <button class="btn btn-solid" type="submit">Submit YOur
-                                            Review</button>
+                                        <button class="btn btn-solid" type="submit">Guardar comentario</button>
                                     </div>
                                 </div>
                             </form>
@@ -281,7 +220,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 product-related">
-                    <h2>related products</h2>
+                    <h2>Productos relacionados</h2>
                 </div>
             </div>
             <div class="row search-product">
@@ -513,11 +452,22 @@
     export default {
         mounted(){
             this.inicio();
+            const imgs = document.querySelectorAll('.img-select a');
+            const imgBtns = [...imgs];
+
+            imgBtns.forEach((imgItem) => {
+            imgItem.addEventListener('click', (event) => {
+                event.preventDefault();
+                const imgId = parseInt(imgItem.dataset.id);
+                this.changeImage(imgId);
+            });
+            });
         },
         data(){
             return {
                 producto: [],
                 imagenes: [],
+                currentImage: '' // Agrega una propiedad para rastrear la imagen actual
             }
         },
         created() {
@@ -527,12 +477,65 @@
                 axios.get(`detalle/${this.$route.params.id}`).then(res =>{
                 this.producto = res.data.producto[0];
                     this.imagenes = res.data.imagenes;
+                    this.currentImage = this.imagenes[0].nombre;
                 });  
             },
+            changeImage(imgId) {
+                this.currentImage = this.imagenes[imgId - 1].nombre; // Cambia la imagen actual según el data-id seleccionado
+            },
+            cambiaimagen(){
+                const imgs = document.querySelectorAll('.img-select a');
+                const imgBtns = [...imgs];
+
+                imgBtns.forEach((imgItem) => {
+                imgItem.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const imgId = parseInt(imgItem.dataset.id);
+                    this.changeImage(imgId);
+                });
+                });
+            }
         }
+        
     }
 </script>
 
 <style>
+.zoomable-image {
+  transition: transform 0.3s;
+}
 
+.zoomable-image:hover {
+  transform: scale(1.1);
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 </style>

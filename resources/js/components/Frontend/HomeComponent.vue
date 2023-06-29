@@ -1,7 +1,7 @@
 <template>
     <div>
             <!-- Home slider -->
-    <section class="p-0">
+    <!-- <section class="p-0">
         <div class="slide-1 home-slider">
             <div>
                 <div class="home  text-center">
@@ -14,7 +14,6 @@
                                         <h4 style="color:#2874f0;"><b>BIENVENIDO A</b></h4>
                                         <h1>Electrónica</h1>
                                         <h3 style="color:black;">VAZQUEZ</h3>
-                                        <!-- <a href="#" class="btn btn-solid">Ver ahora</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +31,6 @@
                                     <div>
                                         <h4>CONTÄCTANOS Y SOLICITA TU</h4>
                                         <h1>COTIZACIÓN</h1>
-                                        <!-- <a href="#" class="btn btn-solid">shop now</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -41,10 +39,105 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Home slider end -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="assets/images/logos/fondo5.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/images/logos/fondo7.png" alt="Second slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+    <!-- Paragraph-->
+    <div class="title1 section-t-space">
+        <h4>productos especiales.</h4>
+        <h2 class="title-inner1">Lo más nuevo</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="product-para">
+                    <p class="text-center">Encontrarás los productos mas nuevos de nuestro catálogo </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Paragraph end -->
 
 
+    <!-- Product slider -->
+    <section class="section-b-space pt-0 ratio_asos">
+        <div class="container">
+            <div class="row">
+                <div class="col" v-for="(np,index) in nuevos_productos" :key="index">
+                    <div class="product-4 product-m no-arrow">
+                        <div class="product-box">
+                            <div class="img-wrapper">
+                                <div class="lable-block"><span class="lable3">Nuevo</span> <span
+                                                    class="lable4">Cotizalo</span></div>
+                                <div class="front" v-if="np.trae_imagen == 'Si'">
+                                    <router-link :to="`detalle-producto/`+np.id_producto">
+                                    <img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
+                                </div>
+                                <div class="front" v-else>
+                                    <router-link :to="`detalle-producto/`+np.id_producto"><img src="assets/images/pro3/27.jpg"
+                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
+                                </div>
+                                <div class="back" v-if="np.trae_imagen == 'Si'">
+                                    <router-link :to="`detalle-producto/`+np.id_producto"><img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
+                                </div>
+                                <div class="back" v-else>
+                                    <router-link :to="`detalle-producto/`+np.id_producto"><img src="assets/images/pro3/28.jpg"
+                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
+                                </div>
+                                <div class="cart-info cart-wrap">
+                                    <button data-bs-toggle="modal" data-bs-target="#addtocart" title="Agregar a cotización">
+                                        <i class="ti-shopping-cart"></i>
+                                    </button>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view" title="Ver más">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                </div>
+                                <a href="product-page(no-sidebar).html">
+                                    <h6>{{ np.producto }}</h6>
+                                </a>
+                                <!-- <h4>$20.00</h4> -->
+                                <ul class="color-variant">
+                                    <li class="bg-light0"></li>
+                                    <li class="bg-light1"></li>
+                                    <li class="bg-light2"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product slider end -->
     <!-- collection banner -->
     <section class="pb-0 ratio2_1">
         <div class="container">
@@ -85,82 +178,6 @@
         </div>
     </section>
     <!-- collection banner end -->
-
-
-    <!-- Paragraph-->
-    <div class="title1 section-t-space">
-        <h4>productos especiales.</h4>
-        <h2 class="title-inner1">Lo más nuevo</h2>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <div class="product-para">
-                    <p class="text-center">Encontrarás los productos mas nuevos de nuestro catálogo </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Paragraph end -->
-
-
-    <!-- Product slider -->
-    <section class="section-b-space pt-0 ratio_asos">
-        <div class="container">
-            <div class="row">
-                <div class="col" v-for="(np,index) in nuevos_productos" :key="index">
-                    <div class="product-4 product-m no-arrow">
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <div class="lable-block"><span class="lable3">Nuevo</span> <span
-                                                    class="lable4">Cotizalo</span></div>
-                                <div class="front" v-if="np.trae_imagen == 'Si'">
-                                    <router-link :to="`/detalle-producto/`+np.id_producto">
-                                    <img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
-                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
-                                </div>
-                                <div class="front" v-else>
-                                    <router-link :to="`/detalle-producto/`+np.id_producto"><img src="assets/images/pro3/27.jpg"
-                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
-                                </div>
-                                <div class="back" v-if="np.trae_imagen == 'Si'">
-                                    <router-link :to="`/detalle-producto/`+np.id_producto"><img :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
-                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
-                                </div>
-                                <div class="back" v-else>
-                                    <router-link :to="`/detalle-producto/`+np.id_producto"><img src="assets/images/pro3/28.jpg"
-                                            class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <button data-bs-toggle="modal" data-bs-target="#addtocart" title="Agregar a cotización">
-                                        <i class="ti-shopping-cart"></i>
-                                    </button>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view" title="Ver más">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                </div>
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>{{ np.producto }}</h6>
-                                </a>
-                                <!-- <h4>$20.00</h4> -->
-                                <ul class="color-variant">
-                                    <li class="bg-light0"></li>
-                                    <li class="bg-light1"></li>
-                                    <li class="bg-light2"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Product slider end -->
     <!-- service layout -->
     <div class="container">
         <section class="service border-section small-section">
@@ -242,7 +259,7 @@
     <!-- service layout  end -->
 
     <!-- Parallax banner -->
-    <section class="p-0">
+    <!-- <section class="p-0">
         <div class="full-banner parallax text-center p-left">
             <img src="assets/images/parallax/1.jpg" alt="" class="bg-img blur-up lazyload">
             <div class="container">
@@ -257,7 +274,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Parallax banner end -->
 
 
@@ -281,21 +298,21 @@
                                         <div class="img-wrapper">
                                             <div class="front" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
-                                                        class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></a>
+                                                    :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                        class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="front" v-else>
                                                 <a href="product-page(no-sidebar).html"><img src="assets/images/pro3/27.jpg"
-                                                        class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></a>
+                                                        class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="back" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://localhost/ElectricaV/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
-                                                        class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></a>
+                                                    :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                        class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="back" v-else>
                                                 <a href="product-page(no-sidebar).html"><img src="assets/images/pro3/27.jpg"
-                                                        class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></a>
+                                                        class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="cart-info cart-wrap">
                                                 <button data-bs-toggle="modal" data-bs-target="#addtocart"
