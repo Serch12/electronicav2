@@ -18,14 +18,16 @@ import Nosotros from './components/Frontend/NosotrosComponent.vue'
 import Contacto from './components/Frontend/ContactoComponent.vue'
 import Cotizacion from './components/Frontend/CotizacionComponent.vue'
 import App from './components/App.vue'
+import Catalogo from './components/Frontend/CatalogoComponent.vue'
 
 const routes = [
     { path: '/detalle-producto/:id', component: DetalleProducto},
-    { path: '/inicio',name: 'inicio', component: Home},
+    // { path: '/inicio',name: 'inicio', component: Home},
     { path: '/',name: 'home', component: Home},
     { path: '/nosotros',name: 'nosotros', component: Nosotros},
     { path: '/contacto',name: 'contacto', component: Contacto},
     { path: '/cotizacion',name: 'cotizacion', component: Cotizacion},
+    { path: '/catalogo',name: 'catalogo', component: Catalogo},
   ];  
   // export default routes;
   const router = new VueRouter({
@@ -61,7 +63,7 @@ const routes = [
 
 const app = new Vue({
     el: '#app',
-    // components: {App},
+    components: {App},
     router,
-    render: h => h(App)
+    // render: h => h(App)
 });

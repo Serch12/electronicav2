@@ -90,7 +90,7 @@
                         <div class="product-box">
                             <div class="img-wrapper">
                                 <div class="lable-block"><span class="lable3">Nuevo</span> <span
-                                                    class="lable4">Cotizalo</span></div>
+                                                    class="lable4" @click="agregarCotizacion();">Cotizalo</span></div>
                                 <div class="front" v-if="np.trae_imagen == 'Si'">
                                     <router-link :to="`detalle-producto/`+np.id_producto">
                                     <img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
@@ -407,12 +407,17 @@
     </section>
     <!--  logo section end-->
     </div>
+
 </template>
 
 <script>
+import AppComponent from '../../components/App.vue'
 export default {
     mounted(){
         this.inicio();
+    },
+    components: {
+        AppComponent,
     },
     data(){
         return {
@@ -429,6 +434,9 @@ export default {
 
             
         },
+        agregarCotizacion(){
+            this.$refs.AppComponent.miFuncion();
+        }
     }
 }
 </script>

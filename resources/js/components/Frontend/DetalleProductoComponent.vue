@@ -51,7 +51,7 @@
                                 <span class="label-text">in fashion</span>
                             </div> -->
                             <!-- <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3> -->
-                            <h3 class="price-detail">$32.96</h3>
+                            <h3 class="price-detail">${{ formatPrice(producto.precio) }} mxn.</h3>
                             <!-- <ul class="color-variant">
                                 <li class="bg-light0 active"></li>
                                 <li class="bg-light1"></li>
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <h6 class="error-message">Seleccionar tamaño</h6>
+                                <!-- <h6 class="error-message">Seleccionar tamaño</h6>
                                 <div class="size-box">
                                     <ul>
                                         <li><a href="javascript:void(0)">s</a></li>
@@ -84,7 +84,7 @@
                                         <li><a href="javascript:void(0)">l</a></li>
                                         <li><a href="javascript:void(0)">xl</a></li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <h6 class="product-title">Cantidad</h6>
                                 <div class="qty-box">
                                     <div class="input-group"><span class="input-group-prepend"><button type="button"
@@ -113,6 +113,24 @@
                                 <h6 class="product-title">Descripción</h6>
                                 <ul class="shipping-info">
                                     <li>{{ producto.descripcion }}</li>
+                                </ul>
+                            </div>
+                            <div class="border-product">
+                                <h6 class="product-title">Categoría</h6>
+                                <ul class="shipping-info">
+                                    <li>{{ producto.nombre_categoria }}</li>
+                                </ul>
+                            </div>
+                            <div class="border-product">
+                                <h6 class="product-title">Marca</h6>
+                                <ul class="shipping-info">
+                                    <li>{{ producto.nombre_marca }}</li>
+                                </ul>
+                            </div>
+                            <div class="border-product">
+                                <h6 class="product-title">Modelo</h6>
+                                <ul class="shipping-info">
+                                    <li>{{ producto.nombre_modelo }}</li>
                                 </ul>
                             </div>
                             <!-- <div class="border-product">
@@ -152,11 +170,11 @@
                             <div class="material-border"></div>
                         </li>
                        
-                        <li class="nav-item"><a class="nav-link" id="review-top-tab" data-bs-toggle="tab"
+                        <!-- <li class="nav-item"><a class="nav-link" id="review-top-tab" data-bs-toggle="tab"
                                 href="#top-review" role="tab" aria-selected="false"><i
                                     class="icofont icofont-contacts"></i>Comentarios</a>
                             <div class="material-border"></div>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="tab-content nav-material" id="top-tabContent">
                         <div class="tab-pane fade show active" id="top-home" role="tabpanel"
@@ -166,10 +184,10 @@
                                     <a href="" :href="`http://localhost/Electrica/public/ArchivosSistema/PDF/${producto.archivo}`" target="_blank" onclick="window.open(this.href, this.target, 'width=650,height=650'); return false;"><p>Descargar PDF</p></a>
                                     
                                 </div>
-                                <img src="assets/images/logos/logoelectro.png" alt="" style="width: 150px;height: 150px;">
+                                <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/logos/pdf.png" alt="" style="width: 100px;height: 100px;">
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
+                        <!-- <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
                             <form class="theme-form">
                                 <div class="form-row row">
                                     <div class="col-md-12">
@@ -206,7 +224,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -494,7 +512,11 @@
                     this.changeImage(imgId);
                 });
                 });
-            }
+            },
+            formatPrice(value) {
+                let val = (value / 1).toFixed(2).replace(',', '.')
+                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            },
         }
         
     }

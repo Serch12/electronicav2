@@ -49,7 +49,7 @@
                                                             <h4><span>{{ product.price }}</span></h4>
                                                         </div>
                                                     </div>
-                                                    <div class="close-circle"><a href="#"><i class="fa fa-times"
+                                                    <div class="close-circle"><a href="#" v-on:click="removeFromCart(index)"><i class="fa fa-times"
                                                                 aria-hidden="true"></i></a></div>
                                                 </li>
                                                 <li>
@@ -117,7 +117,7 @@
                     <div class="category-menu d-none d-xl-block h-100">
                         <div id="toggle-sidebar" class="toggle-sidebar">
                             <i class="fa fa-bars sidebar-bar"></i>
-                            <h5 class="mb-0" @click="categorias();">ver catalogo</h5>
+                            <h5 class="mb-0">ver catalogo</h5>
                         </div>
                     </div>
                     <div class="sidenav fixed-sidebar marketplace-sidebar">
@@ -127,21 +127,8 @@
                                         class="fa fa-angle-left pe-2" aria-hidden="true"></i> Back</div>
                             </div>
                             <ul id="sub-menu" class="sm pixelstrap sm-vertical">
-                                <li> <a href="#">Prueba Categoría</a>
-                                    <ul class="mega-menu clothing-menu">
-                                        <li>
-                                            <div class="row m-0">
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li> <a href="#">2345678aaaa</a>
+                                
+                                <li v-for="(cl,ix) in categoriaslista" :key="ix"> <a href="#">{{cl.categoria}}</a>
                                     <ul class="mega-menu clothing-menu">
                                         <li>
                                             <div class="row m-0">
@@ -163,39 +150,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li> <a href="#">Nueva Prueba 12</a>
-                                    <ul class="mega-menu clothing-menu">
-                                        <li>
-                                            <div class="row m-0">
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        <h5>PRUEBAS 2021</h5>
-                                                        <ul>
-                                                            <li><a href="#">dresses</a></li>
-                                                            <li><a href="#">skirts</a></li>
-                                                            <li><a href="#">westarn wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                            <li><a href="#">sport wear</a></li>
-                                                        </ul>
-                                                        <h5>Pruebas 2</h5>
-                                                        <ul>
-                                                            <li><a href="#">sports wear</a></li>
-                                                            <li><a href="#">western wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                        </ul>
-                                                        <h5>Pruebas 3</h5>
-                                                        <ul>
-                                                            <li><a href="#">sports wear</a></li>
-                                                            <li><a href="#">western wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -208,31 +162,11 @@
                                 <li :class="{'active': $route.name === 'inicio'}">
                                     <div class="mobile-back text-end">Regresar<i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                                 </li>
-                                <li><router-link exact :to="{ name: 'inicio' }">Inicio</router-link></li>
+                                <li><router-link exact :to="{ name: 'home' }">Inicio</router-link></li>
                                 <li class="mega" id="hover-cls">
                                     <router-link exact :to="{ name: 'nosotros' }">Nosotros</router-link>
                                 </li>
-                                <li>
-                                    <a href="#">catalogo de productos</a> 
-                                    <ul>
-                                        <li><a href="category-page(vegetables).html">tab style<span
-                                                    class="new-tag">new</span></a></li>
-                                        <li><a href="category-page(top-filter).html">top filter</a></li>
-                                        <li><a href="category-page(modern).html">modern</a></li>
-                                        <li><a href="category-page.html">left sidebar</a></li>
-                                        <li><a href="category-page(right).html">right sidebar</a></li>
-                                        <li><a href="category-page(no-sidebar).html">no sidebar</a></li>
-                                        <li><a href="category-page(sidebar-popup).html">sidebar popup</a>
-                                        </li>
-                                        <li><a href="category-page(metro).html">metro</a></li>
-                                        <li><a href="category-page(full-width).html">full width</a></li>
-                                        <li><a href="category-page(infinite-scroll).html">infinite
-                                                scroll</a></li>
-                                        <li><a href=category-page(3-grid).html>three grid</a></li>
-                                        <li><a href="category-page(6-grid).html">six grid</a></li>
-                                        <li><a href="category-page(list-view).html">list view</a></li>
-                                    </ul>
-                                </li>
+                                <li><router-link exact :to="{ name: 'catalogo' }">Catálogo de productos</router-link></li>
                                 <li>
                                     <a href="#">ofertas</a>
                                 </li>
@@ -257,36 +191,39 @@
 </template>
 <script>
     export default {
-        mounted(){
-            
+    mounted() {
+        this.categorias();
+    },
+    data() {
+        return {
+            categoriaslista: [],
+            products: [
+                { name: "Producto 1", price: 10 },
+                { name: "Producto 2", price: 15 },
+                { name: "Producto 3", price: 20 },
+                { name: "Producto 3", price: 25 },
+            ],
+            cart: [],
+        };
+    },
+    methods: {
+        categorias() {
+            axios.get("categorias").then(res => {
+                this.categoriaslista = res.data;
+                console.log(this.categoriaslista);
+            });
         },
-        data(){
-            return{
-                categoriaslista:[],
-                products: [
-                    { name: 'Producto 1', price: 10 },
-                    { name: 'Producto 2', price: 15 },
-                    { name: 'Producto 3', price: 20 },
-                    { name: 'Producto 3', price: 25 },
-                ],
-                cart: [],
-            }
-        },
-        methods:{
-            categorias(){
-                axios.get('inicio/categorias').then(res => {
-                    this.categoriaslista = res.data;
-                    console.log(this.categoriaslista);
-                })
-            },
-            addToCart(product) {
+        addToCart(product) {
             this.cart.push(product);
-            },
-            removeFromCart(index) {
-            this.cart.splice(index, 1);
-            },
+        },
+        removeFromCart(index) {
+            this.products.splice(index, 1);
+        },
+        miFuncion() {
+            this.products.push({ name: "Producto 6", price: 156.53 });
         }
-    }
+    },
+}
 </script>
 
 <style lang="stylus" scoped>

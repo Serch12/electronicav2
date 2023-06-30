@@ -46,6 +46,7 @@
     <div id="app">
        
         <app></app>
+        @yield('content');
     </div>
     @include('Frontend.footer')
     <script src="{{ asset('js/app.js') }}"></script>
