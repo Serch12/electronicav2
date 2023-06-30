@@ -44,7 +44,7 @@ Route::get('/inicio/productos', function () {
     return response()->json([
         'productos' => $productos,
         'nuevos_productos' => $nuevos_productos
-    ]); 
+    ]);
 });
 Route::get('/catalogo/productos', function () {
     $categorias = DB::connection('mysql2')->table('tbl_categoria')->get();
@@ -137,7 +137,7 @@ Route::get('/detalle-producto/detalle/{id}', function ($id) {
     ->get();
     $imagenes = DB::connection('mysql2')->table('tbl_imagenes_producto')->where('id_producto', $id)->get();
     return response()->json([
-        'producto' => $producto, 
+        'producto' => $producto,
         'imagenes' => $imagenes
     ]);
 });

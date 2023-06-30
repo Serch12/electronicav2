@@ -26,7 +26,7 @@
                             </button>
                         </form>
                         <ul>
-                            
+
                         </ul>
                     </div>
                     <div class="menu-right pull-right">
@@ -105,11 +105,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="bottom-part bottom-light">
         <div class="container">
             <div class="row">
@@ -176,10 +176,10 @@
                                 <li class="#">
                                     <router-link exact :to="{ name: 'contacto' }">Contacto</router-link>
                                 </li>
-                                
-                                
+
+
                             </ul>
-                              
+
                         </nav>
                     </div>
                 </div>

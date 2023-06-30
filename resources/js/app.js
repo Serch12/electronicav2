@@ -32,7 +32,7 @@ const routes = [
   // export default routes;
   const router = new VueRouter({
     mode: 'history',
-    base: '/ElectronicaFront/electronicav2/public', 
+    base: '/public',
     routes,
   });
 /**
