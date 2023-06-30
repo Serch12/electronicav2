@@ -26,7 +26,7 @@
                             </button>
                         </form>
                         <ul>
-                            
+
                         </ul>
                     </div>
                     <div class="menu-right pull-right">
@@ -105,11 +105,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="bottom-part bottom-light">
         <div class="container">
             <div class="row">
@@ -127,71 +127,18 @@
                                         class="fa fa-angle-left pe-2" aria-hidden="true"></i> Back</div>
                             </div>
                             <ul id="sub-menu" class="sm pixelstrap sm-vertical">
-                                <li> <a href="#">Prueba Categoría</a>
+                                <li v-for="(cat, index) in categoriaslista" :key="index">
+                                    <a href="#">{{cat.categoria}}</a>
                                     <ul class="mega-menu clothing-menu">
                                         <li>
                                             <div class="row m-0">
                                                 <div class="col-xl-4">
                                                     <div class="link-section">
-                                                        
+                                                        <a href="">{{ cat.subcategoria }}</a>
+
                                                     </div>
                                                 </div>
-                                                
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li> <a href="#">2345678aaaa</a>
-                                    <ul class="mega-menu clothing-menu">
-                                        <li>
-                                            <div class="row m-0">
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        <h5>Electrodos</h5>
-                                                        <ul>
-                                                            <li><a href="#">dresses</a></li>
-                                                            <li><a href="#">skirts</a></li>
-                                                            <li><a href="#">westarn wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                            <li><a href="#">sport wear</a></li>
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li> <a href="#">Nueva Prueba 12</a>
-                                    <ul class="mega-menu clothing-menu">
-                                        <li>
-                                            <div class="row m-0">
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        <h5>PRUEBAS 2021</h5>
-                                                        <ul>
-                                                            <li><a href="#">dresses</a></li>
-                                                            <li><a href="#">skirts</a></li>
-                                                            <li><a href="#">westarn wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                            <li><a href="#">sport wear</a></li>
-                                                        </ul>
-                                                        <h5>Pruebas 2</h5>
-                                                        <ul>
-                                                            <li><a href="#">sports wear</a></li>
-                                                            <li><a href="#">western wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                        </ul>
-                                                        <h5>Pruebas 3</h5>
-                                                        <ul>
-                                                            <li><a href="#">sports wear</a></li>
-                                                            <li><a href="#">western wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                
+
                                             </div>
                                         </li>
                                     </ul>
@@ -213,7 +160,7 @@
                                     <router-link exact :to="{ name: 'nosotros' }">Nosotros</router-link>
                                 </li>
                                 <li>
-                                    <a href="#">catalogo de productos</a> 
+                                    <a href="#">catalogo de productos</a>
                                     <ul>
                                         <li><a href="category-page(vegetables).html">tab style<span
                                                     class="new-tag">new</span></a></li>
@@ -242,10 +189,10 @@
                                 <li class="#">
                                     <router-link exact :to="{ name: 'contacto' }">Contacto</router-link>
                                 </li>
-                                
-                                
+
+
                             </ul>
-                              
+
                         </nav>
                     </div>
                 </div>
@@ -258,7 +205,7 @@
 <script>
     export default {
         mounted(){
-            
+            this.categorias();
         },
         data(){
             return{

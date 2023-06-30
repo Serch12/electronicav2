@@ -26,11 +26,11 @@ const routes = [
     { path: '/nosotros',name: 'nosotros', component: Nosotros},
     { path: '/contacto',name: 'contacto', component: Contacto},
     { path: '/cotizacion',name: 'cotizacion', component: Cotizacion},
-  ];  
+  ];
   // export default routes;
   const router = new VueRouter({
     mode: 'history',
-    base: '/ElectronicaFront/electronicav2/public', 
+    base: '/electronicav2/public',
     routes,
   });
 /**

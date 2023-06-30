@@ -44,22 +44,22 @@ Route::get('/inicio/productos', function () {
     return response()->json([
         'productos' => $productos,
         'nuevos_productos' => $nuevos_productos
-    ]); 
+    ]);
 });
 // Route::get('/inicio/productos', [HomeController::class, 'productos_inicio']);
 // Route::get('/inicio', [FrontController::class, 'index'])->name('inicio');
 // Route::get('/contacto', [FrontController::class, 'viewContacto'])->name('contacto');
 // Route::get('/nosotros', [FrontController::class, 'viewNosotros'])->name('nosotros');
-// Route::get('/detalle-producto/detalle/{id}',[FrontController::class, 'detalleP'])->name('detalle-producto/detalle/{id}'); 
+// Route::get('/detalle-producto/detalle/{id}',[FrontController::class, 'detalleP'])->name('detalle-producto/detalle/{id}');
 Route::get('/detalle-producto/detalle/{id}', function ($id) {
     $producto = DB::connection('mysql2')->table('tbl_productos')->where('id_producto',$id)->get();
     $imagenes = DB::connection('mysql2')->table('tbl_imagenes_producto')->where('id_producto', $id)->get();
     return response()->json([
-        'producto' => $producto, 
+        'producto' => $producto,
         'imagenes' => $imagenes
     ]);
 });
-Route::get('/categorias', [FrontController::class, 'listaCategorias'])->name('categorias');
+Route::get('/inicio/categorias', [FrontController::class, 'listaCategorias'])->name('inicio/categorias');
 
 Auth::routes();
 

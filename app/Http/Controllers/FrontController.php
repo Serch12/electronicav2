@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
@@ -11,7 +11,7 @@ class FrontController extends Controller
      /**
      * funcion que retorna la visata del frotend
      */
-    public function index(){       
+    public function index(){
         return view('Frontend.home');
     }
 
@@ -41,7 +41,7 @@ class FrontController extends Controller
         return view('Frontend.nosotros');
     }
 
-   
+
     /**
      * funcion que retorna la info del producto
      */
@@ -49,14 +49,17 @@ class FrontController extends Controller
         $producto = DB::connection('mysql2')->table('tbl_productos')->where('id_producto',$id)->get();
         $imagenes = DB::connection('mysql2')->table('tbl_imagenes_producto')->where('id_producto', $id)->get();
         return response()->json(['producto' => $producto, 'imagenes' => $imagenes]);
-    } 
+    }
 
     /**
      * funcion que retorna las cateogorias
      */
     public function listaCategorias(){
-        $categorias = DB::connection('mysql2')->table('tbl_categoria')->get();
+        $categorias = DB::connection('mysql2')->table('tbl_categoria')
+                    ->join('tbl_subcategoria', 'tbl_categoria.id_categoria','=','tbl_subcategoria.id_categoria')
+                    ->select('tbl_categoria.*', 'tbl_subcategoria.*')
+                    ->get();
         return $categorias;
     }
-   
+
 }
