@@ -30,6 +30,7 @@ const routes = [
   // export default routes;
   const router = new VueRouter({
     mode: 'history',
+    base: '/public',
     routes,
   });
 /**
