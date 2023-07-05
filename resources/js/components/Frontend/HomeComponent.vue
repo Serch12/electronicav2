@@ -93,7 +93,7 @@
                                                     class="lable4" @click="agregarCotizacion();">Cotizalo</span></div>
                                 <div class="front" v-if="np.trae_imagen == 'Si'">
                                     <router-link :to="`detalle-producto/`+np.id_producto">
-                                    <img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                    <img :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="front" v-else>
@@ -101,7 +101,7 @@
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="back" v-if="np.trae_imagen == 'Si'">
-                                    <router-link :to="`detalle-producto/`+np.id_producto"><img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                    <router-link :to="`detalle-producto/`+np.id_producto"><img :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="back" v-else>
@@ -298,7 +298,7 @@
                                         <div class="img-wrapper">
                                             <div class="front" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                    :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
                                                         class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="front" v-else>
@@ -307,7 +307,7 @@
                                             </div>
                                             <div class="back" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                    :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
                                                         class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="back" v-else>

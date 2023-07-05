@@ -32,7 +32,7 @@ const routes = [
   // export default routes;
   const router = new VueRouter({
     mode: 'history',
-    base: '/public',
+    base: '/ElectronicaFront/electronicav2/public',
     routes,
   });
 /**
@@ -63,7 +63,7 @@ const routes = [
 
 const app = new Vue({
     el: '#app',
-    components: {App},
+    // components: {App},
     router,
-    // render: h => h(App)
+    render: h => h(App)
 });
