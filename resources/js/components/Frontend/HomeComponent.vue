@@ -152,7 +152,7 @@
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 30%</h4> -->
-                                    <h2>Categoria 1</h2>
+                                    <h2>Categoria 16</h2>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 60%</h4> -->
-                                    <h2>Categoria 2</h2>
+                                    <h2>Categoria 5</h2>
                                 </div>
                             </div>
                         </div>
