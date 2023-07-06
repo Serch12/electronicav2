@@ -67,7 +67,7 @@
     <!-- Paragraph-->
     <div class="title1 section-t-space">
         <h4>productos especiales.</h4>
-        <h2 class="title-inner1">Lo más nuevo en esto</h2>
+        <h2 class="title-inner1">Lo más nuevo en esto de estos madres</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -341,10 +341,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -432,7 +432,7 @@ export default {
                 this.productos = res.data.productos;
             });
 
-            
+
         },
         agregarCotizacion(){
             this.$refs.AppComponent.miFuncion();
