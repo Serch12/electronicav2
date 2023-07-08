@@ -3,7 +3,7 @@
     <!-- vendor cover start -->
     <div class="vendor-cover">
         <div>
-            <img src="assets/images/vendor/profile.jpg" alt="" class="bg-img lazyload blur-up">
+            <img src="assets/images/nosotros.png" alt="" class="bg-img lazyload blur-up">
         </div>
     </div>
     <!-- vendor cover end -->
@@ -74,7 +74,7 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@
 
 <script>
     export default {
-        
+
     }
 </script>
 

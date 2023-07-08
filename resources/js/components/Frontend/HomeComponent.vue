@@ -67,7 +67,7 @@
     <!-- Paragraph-->
     <div class="title1 section-t-space">
         <h4>productos especiales.</h4>
-        <h2 class="title-inner1">Lo más nuevo de estas madres tres</h2>
+        <h2 class="title-inner1">Lo más nuevo</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -146,13 +146,13 @@
                     <a href="#">
                         <div class="collection-banner p-right text-center">
                             <div class="img-part">
-                                <img src="assets/images/sub-banner1.jpg" class="img-fluid blur-up lazyload bg-img"
+                                <img src="assets/images/unsplash.jpg" class="img-fluid blur-up lazyload bg-img"
                                     alt="">
                             </div>
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 30%</h4> -->
-                                    <h2>Categoria 16</h2>
+                                    <!-- <h2>Categoria 16</h2> -->
                                 </div>
                             </div>
                         </div>
@@ -162,13 +162,13 @@
                     <a href="#">
                         <div class="collection-banner p-right text-center">
                             <div class="img-part">
-                                <img src="assets/images/sub-banner2.jpg" class="img-fluid blur-up lazyload bg-img"
+                                <img src="assets/images/unsplash2.jpg" class="img-fluid blur-up lazyload bg-img"
                                     alt="">
                             </div>
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 60%</h4> -->
-                                    <h2>Categoria 5</h2>
+                                    <!-- <h2>Categoria 5</h2> -->
                                 </div>
                             </div>
                         </div>
@@ -359,7 +359,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="slide-6 no-arrow">
+                    <div class=" no-arrow d-flex justify-content-around">
                         <div>
                             <div class="logo-block">
                                 <a href="#"><img src="assets/images/logos/1.png" alt=""></a>

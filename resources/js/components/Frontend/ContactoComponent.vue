@@ -28,9 +28,7 @@
         <div class="container">
             <div class="row section-b-space">
                 <div class="col-lg-7 map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1605.811957341231!2d25.45976406005396!3d36.3940974010114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550912388321"
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470.7423385156362!2d-99.5300610119383!3d19.285031440002633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdf53b15c16933%3A0x15d7f556ff0b653!2sElectr%C3%B3nica%20y%20Control%20Industrial%20%22V%C3%A1zquez%22!5e0!3m2!1ses!2smx!4v1688845265185!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-5">
                     <div class="contact-right">
