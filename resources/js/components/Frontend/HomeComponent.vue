@@ -67,7 +67,7 @@
     <!-- Paragraph-->
     <div class="title1 section-t-space">
         <h4>productos especiales.</h4>
-        <h2 class="title-inner1">Lo más nuevo</h2>
+        <h2 class="title-inner1">Lo más nuevo de electronica</h2>
     </div>
     <div class="container">
         <div class="row">
