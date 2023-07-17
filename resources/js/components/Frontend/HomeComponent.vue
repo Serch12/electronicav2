@@ -67,7 +67,7 @@
     <!-- Paragraph-->
     <div class="title1 section-t-space">
         <h4>productos especiales.</h4>
-        <h2 class="title-inner1">Lo más nuevo en esto</h2>
+        <h2 class="title-inner1">Lo más reciente</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -93,7 +93,7 @@
                                                     class="lable4" @click="agregarCotizacion();">Cotizalo</span></div>
                                 <div class="front" v-if="np.trae_imagen == 'Si'">
                                     <router-link :to="`detalle-producto/`+np.id_producto">
-                                    <img :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                    <img :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="front" v-else>
@@ -101,7 +101,7 @@
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="back" v-if="np.trae_imagen == 'Si'">
-                                    <router-link :to="`detalle-producto/`+np.id_producto"><img :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
+                                    <router-link :to="`detalle-producto/`+np.id_producto"><img :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${np.imagen_principal}`"
                                             class="img-fluid blur-up lazyload bg-img" style="width: 320px;height: 435px;" alt=""></router-link>
                                 </div>
                                 <div class="back" v-else>
@@ -146,13 +146,13 @@
                     <a href="#">
                         <div class="collection-banner p-right text-center">
                             <div class="img-part">
-                                <img src="assets/images/sub-banner1.jpg" class="img-fluid blur-up lazyload bg-img"
+                                <img src="assets/images/unsplash.jpg" class="img-fluid blur-up lazyload bg-img"
                                     alt="">
                             </div>
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 30%</h4> -->
-                                    <h2>Categoria 16</h2>
+                                    <!-- <h2>Categoria 16</h2> -->
                                 </div>
                             </div>
                         </div>
@@ -162,13 +162,13 @@
                     <a href="#">
                         <div class="collection-banner p-right text-center">
                             <div class="img-part">
-                                <img src="assets/images/sub-banner2.jpg" class="img-fluid blur-up lazyload bg-img"
+                                <img src="assets/images/unsplash2.jpg" class="img-fluid blur-up lazyload bg-img"
                                     alt="">
                             </div>
                             <div class="contain-banner">
                                 <div>
                                     <!-- <h4>save 60%</h4> -->
-                                    <h2>Categoria 5</h2>
+                                    <!-- <h2>Categoria 5</h2> -->
                                 </div>
                             </div>
                         </div>
@@ -298,7 +298,7 @@
                                         <div class="img-wrapper">
                                             <div class="front" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                    :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
                                                         class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="front" v-else>
@@ -307,7 +307,7 @@
                                             </div>
                                             <div class="back" v-if="p.trae_imagen == 'Si'">
                                                 <a href="product-page(no-sidebar).html"><img
-                                                    :src="`http://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                    :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
                                                         class="img-fluid bg-img" style="width: 320px;height: 435px;" alt=""></a>
                                             </div>
                                             <div class="back" v-else>
@@ -341,10 +341,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -359,7 +359,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="slide-6 no-arrow">
+                    <div class=" no-arrow d-flex justify-content-around">
                         <div>
                             <div class="logo-block">
                                 <a href="#"><img src="assets/images/logos/1.png" alt=""></a>
@@ -432,7 +432,7 @@ export default {
                 this.productos = res.data.productos;
             });
 
-            
+
         },
         agregarCotizacion(){
             this.$refs.AppComponent.miFuncion();

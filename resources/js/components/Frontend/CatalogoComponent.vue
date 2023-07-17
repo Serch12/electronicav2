@@ -18,7 +18,7 @@
                                             <input type="checkbox" class="form-check-input" :id="`zara${idx}`" :value="c.id_categoria" v-model="filtro.estatus_categoria" @change="BuscarFiltros()">
                                             <label class="form-check-label" for="zara">{{ c.categoria }}</label>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                             <input type="checkbox" class="form-check-input" :id="`twohundred${idx2}`" :value="m.id_marcas" v-model="filtro.estatus_marca" @change="BuscarFiltros()">
                                             <label class="form-check-label" for="zara">{{ m.marcas }}</label>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                                             <div class="front">
                                                                 <router-link :to="`detalle-producto/`+p.id_producto">
                                                                     <a href="#"><img
-                                                                        :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${p.imagen_principal}`"
+                                                                        :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${p.imagen_principal}`"
                                                                         class="img-fluid blur-up lazyload bg-img"
                                                                         alt=""
                                                                         style="width: 239px;height: 215px;">
@@ -137,7 +137,7 @@
                                                                 <router-link :to="`detalle-producto/`+p.id_producto">
                                                                     <h6>{{ p.producto }}</h6>
                                                                 </router-link>
-                                                                
+
                                                                 <h4>${{ formatPrice(p.precio) }} mxn.</h4>
                                                                 <ul class="color-variant">
                                                                     <li class="bg-light0"></li>
@@ -256,7 +256,7 @@
                     this.categorias = res.data.categorias;
                     this.modelos = res.data.modelos;
                     this.pagination = res.data.pagination
-                });    
+                });
             },
             BuscarFiltros(){
                 const params = {

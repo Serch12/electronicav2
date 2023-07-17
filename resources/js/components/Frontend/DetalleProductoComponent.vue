@@ -9,17 +9,17 @@
                         <div class = "product-imgs">
                             <div class = "img-display">
                                 <div class = "img-showcase">
-                                <img v-for="(ing, index) in imagenes" :key="index" :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${currentImage}`" alt = "shoe image" style="height: 676px;">
-                                
+                                <img v-for="(ing, index) in imagenes" :key="index" :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${currentImage}`" alt = "shoe image" style="height: 676px;">
+
                                 </div>
                             </div>
                             <div class = "img-select">
                                 <div class = "img-item" v-for="(im, i) in imagenes" :key="i">
                                 <a href="#." :data-id="`${i + 1}`" @click="cambiaimagen()">
-                                    <img :src="`http://localhost/Electrica/public/ArchivosSistema/Producto/${im.nombre}`" alt ="shoe image" style="width: 150px;height: 150px;">
+                                    <img :src="`https://electronicavazquez.com/intranet/public/ArchivosSistema/Producto/${im.nombre}`" alt ="shoe image" style="width: 150px;height: 150px;">
                                 </a>
                                 </div>
-                    
+
                             </div>
                         </div>
                     </div>
@@ -28,12 +28,12 @@
                             <div class="product-count">
                                 <ul>
                                     <li>
-                                        <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/fire.gif" class="img-fluid" alt="image">
+                                        <img src="https://electronicavazquez.com/public/assets/images/fire.gif" class="img-fluid" alt="image">
                                         <span class="p-counter">37</span>
                                         <span class="lang">cotizaciones en las ultimas 24 horas.</span>
                                     </li>
                                     <!-- <li>
-                                        <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/person.gif" class="img-fluid user_img" alt="image">
+                                        <img src="https://electronicavazquez.com/public/assets/images/person.gif" class="img-fluid user_img" alt="image">
                                         <span class="p-counter">44</span>
                                         <span class="lang">active view this</span>
                                     </li> -->
@@ -71,7 +71,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
-                                            <div class="modal-body"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/size-chart.jpg" alt=""
+                                            <div class="modal-body"><img src="https://electronicavazquez.com/public/assets/images/size-chart.jpg" alt=""
                                                     class="img-fluid blur-up lazyload"></div>
                                         </div>
                                     </div>
@@ -103,12 +103,12 @@
                             <!-- <div class="product-count">
                                 <ul>
                                     <li>
-                                        <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/icon/truck.png" class="img-fluid" alt="image">
+                                        <img src="https://electronicavazquez.com/public/assets/images/icon/truck.png" class="img-fluid" alt="image">
                                         <span class="lang">Free shipping for orders above $500 USD</span>
                                     </li>
                                 </ul>
                             </div> -->
-                           
+
                             <div class="border-product">
                                 <h6 class="product-title">Descripción</h6>
                                 <ul class="shipping-info">
@@ -147,7 +147,7 @@
                             </div>
                             <div class="border-product">
                                 <h6 class="product-title">100% secure payment</h6>
-                                <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/payment.png" class="img-fluid mt-1" alt="">
+                                <img src="https://electronicavazquez.com/public/assets/images/payment.png" class="img-fluid mt-1" alt="">
                             </div> -->
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                                     class="icofont icofont-ui-home"></i>Detalles</a>
                             <div class="material-border"></div>
                         </li>
-                       
+
                         <!-- <li class="nav-item"><a class="nav-link" id="review-top-tab" data-bs-toggle="tab"
                                 href="#top-review" role="tab" aria-selected="false"><i
                                     class="icofont icofont-contacts"></i>Comentarios</a>
@@ -181,10 +181,10 @@
                             aria-labelledby="top-home-tab">
                             <div class="product-tab-discription">
                                 <div class="part">
-                                    <a href="" :href="`http://localhost/Electrica/public/ArchivosSistema/PDF/${producto.archivo}`" target="_blank" onclick="window.open(this.href, this.target, 'width=650,height=650'); return false;"><p>Descargar PDF</p></a>
-                                    
+                                    <a href="" :href="`https://electronicavazquez.com/intranet/public/ArchivosSistema/PDF/${producto.archivo}`" target="_blank" onclick="window.open(this.href, this.target, 'width=650,height=650'); return false;"><p>Descargar PDF</p></a>
+
                                 </div>
-                                <img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/logos/pdf.png" alt="" style="width: 100px;height: 100px;">
+                                <img src="https://electronicavazquez.com/public/assets/images/logos/pdf.png" alt="" style="width: 100px;height: 100px;">
                             </div>
                         </div>
                         <!-- <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
@@ -246,11 +246,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/33.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/33.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/34.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/34.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -282,11 +282,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/1.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/1.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/2.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/2.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -318,11 +318,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/27.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/27.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/28.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/28.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -354,11 +354,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/35.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/35.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/36.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/36.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -390,11 +390,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/2.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/2.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/1.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/1.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -426,11 +426,11 @@
                     <div class="product-box">
                         <div class="img-wrapper">
                             <div class="front">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/28.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/28.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="back">
-                                <a href="#"><img src="http://localhost/ElectronicaFront/electronicav2/public/assets/images/pro3/27.jpg"
+                                <a href="#"><img src="https://electronicavazquez.com/public/assets/images/pro3/27.jpg"
                                         class="img-fluid blur-up lazyload bg-img" alt=""></a>
                             </div>
                             <div class="cart-info cart-wrap">
@@ -496,7 +496,7 @@
                 this.producto = res.data.producto[0];
                     this.imagenes = res.data.imagenes;
                     this.currentImage = this.imagenes[0].nombre;
-                });  
+                });
             },
             changeImage(imgId) {
                 this.currentImage = this.imagenes[imgId - 1].nombre; // Cambia la imagen actual según el data-id seleccionado
@@ -518,7 +518,7 @@
                 return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             },
         }
-        
+
     }
 </script>
 
