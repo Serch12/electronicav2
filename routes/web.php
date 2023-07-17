@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeController;
@@ -142,12 +143,21 @@ Route::get('/detalle-producto/detalle/{id}', function ($id) {
     ]);
 });
 
+Route::get('/contacto/informacion', function () {
+    $info = DB::connection('mysql2')->table('tbl_contacto')->first();
+    return response()->json([
+        'info' => $info
+    ]); 
+});
+
+
+
 Route::get('/categorias', [FrontController::class, 'listaCategorias'])->name('categorias');
 
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::post('/contacto/agregar-mensaje', [FrontController::class, 'agregarMensaje'])->name('contacto/agregar-mensaje');
 Route::get('/{any}', function () {
     return view('Frontend.app');
 })->where('any', '.*');

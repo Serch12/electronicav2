@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mensajes;
 use Illuminate\Support\Facades\DB;
+
+
 
 class FrontController extends Controller
 {
@@ -60,6 +63,20 @@ class FrontController extends Controller
                     ->select('tbl_categoria.*', 'tbl_subcategoria.*')
                     ->get();
         return $categorias;
+    }
+
+    /**
+     * funcion que agrega mensajes
+     */
+    public function agregarMensaje(Request $request){
+        $msj = new Mensajes();
+        $msj->nombre = $request->nombre;
+        $msj->correo = $request->correo;
+        $msj->numero_telefonico = $request->numero_telefonico;
+        $msj->mensaje = $request->mensaje;
+        $msj->save();
+        return $msj;
+
     }
 
 }
