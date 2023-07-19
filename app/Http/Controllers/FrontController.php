@@ -74,6 +74,7 @@ class FrontController extends Controller
         $msj->correo = $request->correo;
         $msj->numero_telefonico = $request->numero_telefonico;
         $msj->mensaje = $request->mensaje;
+        $msj->estatus = 0;
         $msj->save();
         return $msj;
 
