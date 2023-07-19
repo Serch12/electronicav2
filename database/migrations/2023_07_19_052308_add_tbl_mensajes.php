@@ -14,7 +14,7 @@ class AddTblMensajes extends Migration
     public function up()
     {
         Schema::table('tbl_mensajes', function (Blueprint $table) {
-            $table->decimal('estatus')->nullable()->after('mensaje');
+            $table->string('estatus')->nullable()->after('mensaje');
         });
     }
 
