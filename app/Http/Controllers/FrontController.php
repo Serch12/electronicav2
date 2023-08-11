@@ -76,6 +76,18 @@ class FrontController extends Controller
         $msj->mensaje = $request->mensaje;
         $msj->estatus = 0;
         $msj->save();
+
+        $notificacion =  DB::connection('mysql2')->table('tbl_notificaciones')
+        ->insert([
+            'descripcion' => 'Tienes un nuevo Mensaje del Cliente '.$request->nombre,
+            'id_user_de' => $msj->id_mensaje,
+            // 'id_user_para' => 6,
+            'id_user_para' => 1,
+            'modulo' => 'Mensaje',
+            'detalle_notificacion' => 'Nuevo',
+            'url' => 'mensaje',
+            'estatus' => 1
+        ]);
         return $msj;
 
     }
